@@ -8,10 +8,10 @@ REQUEST_TIMEOUT_SEC = 120
 # 사용자가 UI에서 자유롭게 덮어쓸 수 있으므로, OpenRouter에 존재하지 않는
 # 슬러그라면 UI에서 실제 모델로 교체하면 된다.
 DEFAULT_MODELS = {
-    "classifier": "anthropic/claude-sonnet-4.6",
-    "searcher": "anthropic/claude-sonnet-4.6",
-    "writer": "anthropic/claude-sonnet-4.6",
-    "reviewer": "anthropic/claude-sonnet-4.6",
+    "classifier": "deepseek/deepseek-chat",
+    "searcher": "deepseek/deepseek-chat",
+    "writer": "deepseek/deepseek-chat",
+    "reviewer": "deepseek/deepseek-chat",
 }
 
 # 분류_Agent가 참고할 부서/유형 후보 (강제값이 아닌 힌트).

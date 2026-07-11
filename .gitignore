@@ -11,6 +11,9 @@ env/
 !.env.example
 .streamlit/secrets.toml
 
+# Runtime traces can contain complaint text and model outputs.
+_workspace/traces/
+
 *.log
 _app*.log
 

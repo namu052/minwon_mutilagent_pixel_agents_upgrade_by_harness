@@ -1,16 +1,16 @@
 # 📮 민원 초안 생성 Multi-Agent
 
 공공기관 민원에 대한 **답변 초안**을 4단계 에이전트 파이프라인으로 자동 생성합니다.
-기본값은 OpenRouter의 Anthropic Claude 모델이며, 필요하면 단계별로 다른 모델을 지정할 수 있습니다. 진행 과정은 Streamlit UI에서 실시간으로 확인할 수 있습니다.
+기본값은 OpenRouter의 DeepSeek V3(`deepseek/deepseek-chat`)이며, 필요하면 단계별로 다른 모델을 지정할 수 있습니다. 진행 과정은 Streamlit UI에서 실시간으로 확인할 수 있습니다.
 
 ## 🧩 파이프라인 구조
 
 | 단계 | 에이전트 | 역할 | 기본 모델 | 핸드오프(다음 단계로 전달) |
 |------|----------|------|-----------|----------------------------|
-| 1 | **분류_Agent** | 담당 부서·민원 유형 판별 | `anthropic/claude-sonnet-4.6` | 민원 원문 + 부서 + 유형 |
-| 2 | **검색_Agent** | 관련 법령·과거 답변 웹검색 | `anthropic/claude-sonnet-4.6` | 법령근거 + 과거 답변 요약 |
-| 3 | **작성_Agent** | 근거 기반 답변 초안 작성 | `anthropic/claude-sonnet-4.6` | 근거 인용 포함 초안 |
-| 4 | **검수_Agent** | 말투·정확성·근거 점검 + 수정안 | `anthropic/claude-sonnet-4.6` | 최종 수정 초안 |
+| 1 | **분류_Agent** | 담당 부서·민원 유형 판별 | `deepseek/deepseek-chat` | 민원 원문 + 부서 + 유형 |
+| 2 | **검색_Agent** | 관련 법령·과거 답변 웹검색 | `deepseek/deepseek-chat` | 법령근거 + 과거 답변 요약 |
+| 3 | **작성_Agent** | 근거 기반 답변 초안 작성 | `deepseek/deepseek-chat` | 근거 인용 포함 초안 |
+| 4 | **검수_Agent** | 말투·정확성·근거 점검 + 수정안 | `deepseek/deepseek-chat` | 최종 수정 초안 |
 
 > 모델 슬러그는 사이드바에서 자유롭게 교체할 수 있습니다. OpenRouter에 존재하지 않는
 > 슬러그라면 [openrouter.ai/models](https://openrouter.ai/models)에서 실제 모델로 바꿔 입력하세요.
